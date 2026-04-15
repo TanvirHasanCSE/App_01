@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text("Get Stated With",
                     style: Theme.of(context).textTheme.titleLarge,
                     ),
-                  
+                    SizedBox(height: 15,),
                     TextFormField(
                       controller: _emailControlar,
                       decoration: InputDecoration(

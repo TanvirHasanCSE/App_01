@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:module_15/screen/set_password.dart';
 import 'package:module_15/widget/screen_bankground.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'sing_up_serceen.dart';
@@ -39,6 +41,7 @@ class _PassOTPState extends State<PassOTP> {
                     SizedBox(height: 10,),
                     PinInput(
                       length: 6,
+                      keyboardType: TextInputType.number,
                       builder: (context, cells) {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -64,10 +67,10 @@ class _PassOTPState extends State<PassOTP> {
                       onCompleted: (pin) => print('PIN: $pin'),
                     ),
 
-                    SizedBox(height: 10,),
+                    SizedBox(height: 30,),
                     FilledButton(
 
-                        onPressed: (){}, child: Icon(Icons.arrow_circle_right_outlined)),
+                        onPressed: _oneTapeSetPass, child: Text("Enter OTP")),
                     SizedBox(height: 48,),
                     Center(
                       child: Column(
@@ -98,7 +101,14 @@ class _PassOTPState extends State<PassOTP> {
   }
 
   void _oneTapSingUpButton(){
-    Navigator.pop(context,);
+    Navigator.pushAndRemoveUntil(context,
+    MaterialPageRoute(builder: (context) => SingUpScreen()),
+        (predicate) => false
+    );
+  }
+  
+  void _oneTapeSetPass(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>SatePasswordScreen()));
   }
 
 
