@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:module_15/screen/main_nab_bar_holder_screen.dart';
 import 'package:module_15/widget/screen_bankground.dart';
 import 'forgate_password_screen.dart';
 import 'sing_up_serceen.dart';
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 10,),
                     FilledButton(
                   
-                        onPressed: (){}, child: Icon(Icons.arrow_circle_right_outlined)),
+                        onPressed: _oneTapMainScreen, child: Icon(Icons.arrow_circle_right_outlined)),
                     SizedBox(height: 48,),
                     Center(
                       child: Column(
@@ -88,6 +89,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _oneTapForgatePassButton(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgatePasswordScreen()));
+  }
+
+  void _oneTapMainScreen(){
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> Home()),
+        (predicate)=> false
+    );
   }
 
   @override

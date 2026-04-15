@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:module_15/screen/login_page_screen.dart';
+import 'package:module_15/screen/main_nab_bar_holder_screen.dart';
 import 'package:module_15/screen/splase_screen.dart';
 
 class TaskMangerApp extends StatelessWidget {
@@ -8,6 +10,10 @@ class TaskMangerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        // appBarTheme: AppBar(
+        //   backgroundColor: Colors.green,
+        //   foregroundColor: Colors.white,
+        // ),
         textTheme: TextTheme(
           titleLarge: TextStyle(
               color: Colors.black,
@@ -40,7 +46,7 @@ class TaskMangerApp extends StatelessWidget {
       ),
 
       debugShowCheckedModeBanner: false,
-      home: SplaseScreen(),
+      home: LoginScreen(),
     );
   }
 }
